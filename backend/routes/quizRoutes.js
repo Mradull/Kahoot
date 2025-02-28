@@ -3,7 +3,7 @@ const router = express.Router();
 import Quiz from "../models/Quiz.js"
 import {v4 as uuidv4} from "uuid"; // Generate unique room IDs
 import mongoose from "mongoose";
-import authMiddleware from "../middleware/Authmiddleware.js";
+import authMiddleware from "../middleware/authMiddleware.js";
 import { getAuth } from "firebase-admin/auth"; // ✅ Import getAuth
 import User from "../models/User.js";
 

@@ -1,0 +1,9 @@
+# Ignore node_modules in both frontend and backend
+kahoot/node_modules/
+backend/node_modules/
+node_modules/
+
+
+# Ignore environment and secret keys
+.env
+backend/firebaseServiceAccountKey.json
