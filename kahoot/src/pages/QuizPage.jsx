@@ -21,7 +21,7 @@ const QuizPage = () => {
   useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/quizzes/room/${roomNo}`);
+        const response = await axios.get(`https://kahoot-etzm.onrender.com/api/quizzes/room/${roomNo}`);
         setQuiz(response.data);
         setSelectedAnswers(Array(response.data.questions.length).fill(null));
         setLoading(false);
@@ -93,7 +93,7 @@ const QuizPage = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/quizzes/submit-score", {
+      await axios.post("https://kahoot-etzm.onrender.com/api/quizzes/submit-score", {
         roomId: roomNo,
         username: localStorage.getItem("username"),
         score: pointsAwarded,

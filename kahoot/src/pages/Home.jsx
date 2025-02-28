@@ -15,7 +15,7 @@ export default function Home() {
 
     if (token) {
       axios
-        .get("http://localhost:5000/auth/me", {
+        .get("https://kahoot-etzm.onrender.com/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
@@ -23,7 +23,7 @@ export default function Home() {
             setUser(response.data);
           } else {
             axios
-              .get(`http://localhost:5000/auth/user/${response.data.userId}`)
+              .get(`https://kahoot-etzm.onrender.com/auth/user/${response.data.userId}`)
               .then((userRes) => {
                 setUser({ ...response.data, username: userRes.data.username });
               })

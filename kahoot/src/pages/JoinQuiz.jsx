@@ -39,7 +39,7 @@ export default function JoinQuiz() {
 
       // ✅ Fetch quiz details
       const response = await axios.get(
-        `http://localhost:5000/api/quizzes/room/${quizCode}`,
+        `https://kahoot-etzm.onrender.com/api/quizzes/room/${quizCode}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

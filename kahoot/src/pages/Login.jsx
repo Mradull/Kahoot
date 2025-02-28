@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       console.log("🔹 Sending login request for:", email);
-      const response = await axios.post("http://localhost:5000/auth/login", { email, password });
+      const response = await axios.post("https://kahoot-etzm.onrender.com/auth/login", { email, password });
 
       console.log("✅ Login successful:", response.data);
       localStorage.setItem("uid", response.data.user.uid);
@@ -34,7 +34,7 @@ const Login = () => {
       const token = await result.user.getIdToken();
   
       console.log("✅ Google Sign-In successful, sending token to backend...");
-      const response = await axios.post("http://localhost:5000/auth/google-login", { token });
+      const response = await axios.post("https://kahoot-etzm.onrender.com/auth/google-login", { token });
   
       console.log("✅ Google Login successful:", response.data);
       localStorage.setItem("token", response.data.jwtToken);

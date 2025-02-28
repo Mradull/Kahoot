@@ -20,7 +20,7 @@ const Leaderboard = () => {
         return;
       }
   
-      const response = await axios.get(`http://localhost:5000/api/quizzes/leaderboard/${roomNo}`);
+      const response = await axios.get(`https://kahoot-etzm.onrender.com/api/quizzes/leaderboard/${roomNo}`);
       console.log("✅ Leaderboard Data:", response.data);
       setLeaderboard(response.data);
     } catch (error) {
@@ -50,7 +50,7 @@ const Leaderboard = () => {
     }
     else {
       // ✅ Mark quiz as completed once the final leaderboard appears
-      axios.put(`http://localhost:5000/api/quizzes/complete/${roomNo}`)
+      axios.put(`https://kahoot-etzm.onrender.com/api/quizzes/complete/${roomNo}`)
         .then(() => {
           console.log("✅ Quiz marked as completed");
           setQuizCompleted(true);

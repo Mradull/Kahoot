@@ -20,7 +20,7 @@ const Register = () => {
       console.log("✅ Firebase User Created:", user.uid);
       
       // ✅ Send UID to backend
-      const response = await axios.post("http://localhost:5000/auth/register", {
+      const response = await axios.post("https://kahoot-etzm.onrender.com/auth/register", {
         email,password,username
       });
   

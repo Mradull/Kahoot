@@ -21,7 +21,7 @@ const ProfilePage = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/auth/me", {
+        const response = await axios.get("https://kahoot-etzm.onrender.com/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -40,7 +40,7 @@ const ProfilePage = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        "http://localhost:5000/api/user/update-username",
+        "https://kahoot-etzm.onrender.com/api/user/update-username",
         { username: newUsername },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -60,7 +60,7 @@ const ProfilePage = () => {
       const token = localStorage.getItem("token");
 
       console.log("📌 Sending Token :)", token); // Debugging
-      const response = await axios.post("http://localhost:5000/api/user/upload-profile-picture", formData, {
+      const response = await axios.post("https://kahoot-etzm.onrender.com/api/user/upload-profile-picture", formData, {
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data" },
       });
 
@@ -75,7 +75,7 @@ const ProfilePage = () => {
       <div className="profile-card">
         <label htmlFor="profile-upload" className="profile-avatar">
           {profile.profilePicture ? (
-            <img src={`http://localhost:5000/uploads/${profile.profilePicture}`} alt="Profile" />
+            <img src={`https://kahoot-etzm.onrender.com/uploads/${profile.profilePicture}`} alt="Profile" />
           ) : (
             <FaUserCircle size={120} />
           )}

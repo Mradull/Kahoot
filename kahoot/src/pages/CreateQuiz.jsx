@@ -78,7 +78,7 @@ export default function CreateQuiz() {
       } 
 
       const response = await axios.post(
-        "http://localhost:5000/api/quizzes/create",
+        "https://kahoot-etzm.onrender.com/api/quizzes/create",
         { quizTitle, questions},
         { headers: { Authorization: `Bearer ${token}` } }
       );

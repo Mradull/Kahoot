@@ -18,7 +18,7 @@ const Username = () => {
     console.log("🔹 Updating Username for User ID:", _id);
   
     try {
-      const response = await axios.put("http://localhost:5000/auth/update-username", {
+      const response = await axios.put("https://kahoot-etzm.onrender.com/auth/update-username", {
         _id,
         username,
       });

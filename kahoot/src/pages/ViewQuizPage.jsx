@@ -31,7 +31,7 @@ const ViewQuizPage = () => {
   
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/quizzes/my-quizzes",
+          "https://kahoot-etzm.onrender.com/api/quizzes/my-quizzes",
           { headers: { Authorization: `Bearer ${token}` } }
         );
   
@@ -82,7 +82,7 @@ const ViewQuizPage = () => {
   
       // ✅ Now send the PATCH request with the token
       await axios.patch(
-        `http://localhost:5000/api/quizzes/update/${quiz._id}`,
+        `https://kahoot-etzm.onrender.com/api/quizzes/update/${quiz._id}`,
         { startTime: quizStartTime },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -115,7 +115,7 @@ const ViewQuizPage = () => {
 
   // ✅ Copy quiz link to clipboard
   const copyToClipboard = (roomCode) => {
-    const quizLink = `http://localhost:3000/join-quiz?code=${roomCode}`;
+    const quizLink = `https://kahoot-etzm.onrender.com/join-quiz?code=${roomCode}`;
     navigator.clipboard.writeText(quizLink);
     alert("Quiz link copied to clipboard!");
   };
@@ -132,7 +132,7 @@ const ViewQuizPage = () => {
 
       const token = await user.getIdToken();
 
-      await axios.delete(`http://localhost:5000/api/quizzes/delete/${quizId}`, {
+      await axios.delete(`https://kahoot-etzm.onrender.com/api/quizzes/delete/${quizId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
