@@ -1,0 +1,85 @@
+/* Dashboard.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.dashboard-background {
+  background: linear-gradient(135deg, #1a1a40, #4b0082);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  animation: floatingBackground 6s infinite alternate ease-in-out; /* Add animation for background */
+}
+
+/* Background Animation */
+.dashboard-background::before {
+  content: "";
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: floating 6s infinite alternate ease-in-out;
+  top: 50%; /* Positioning it in the center */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+
+@keyframes floating {
+    0% {
+      transform: translate(-50%, -50%) translateY(-20px) translateX(-20px);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateY(20px) translateX(20px);
+    }
+  }
+
+/* Header */
+.dashboard-title {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: 'Lobster', cursive;
+  color: white;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px;
+  text-align: center; /* Centering the title */
+}
+
+/* Button Styling */
+.dashboard-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center; /* Center the buttons horizontally */
+  z-index: 1; /* Ensure buttons are clickable */
+  position: relative;
+}
+
+.dashboard-button {
+  padding: 20px 40px;
+  background-color: white;
+  color: #4b0082;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  width: 300px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer; /* Ensure buttons appear clickable */
+}
+
+.dashboard-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05); /* Increase button size on hover */
+}
+
+.dashboard-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(75, 0, 130, 0.8);
+}

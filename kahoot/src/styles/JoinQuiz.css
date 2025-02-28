@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.joinquiz-background {
+  background: linear-gradient(135deg, #1a1a40, #4b0082);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  animation: floatingBackground 6s infinite alternate ease-in-out;
+}
+
+@keyframes floatingBackground {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Header */
+.joinquiz-header {
+  text-align: center;
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+/* Instructions */
+.joinquiz-instructions {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Quiz Code Input */
+.quiz-code-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.quiz-code-input {
+  padding: 15px;
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  outline: none;
+  background-color: #ffffff;
+  color: #4b0082;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-code-input:focus {
+  border-color: #4b0082;
+}
+
+/* Join Button */
+.join-button {
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #4b0082;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.join-button:hover {
+  background-color: #6a1a9a;
+  transform: scale(1.05);
+}

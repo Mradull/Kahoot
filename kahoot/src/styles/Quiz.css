@@ -1,0 +1,70 @@
+/* Full Page Layout */
+.quiz-container {
+    background-color: #f8f8f8;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    position: relative;
+}
+
+/* Timer Above the Options */
+.timer {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.time-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: orange;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* ✅ FIXING THE GRID LAYOUT */
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 Rows */
+    gap: 15px;
+    width: 400px; /* Adjusted for proper spacing */
+    height: 200px; /* Adjusted to prevent overlap */
+    margin-top: 100px;
+}
+
+/* ✅ FIXING BUTTON SIZING */
+.option {
+    width: 100%;  /* Makes it stretch inside grid */
+    height: 100px; /* Consistent height */
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease-in-out;
+}
+
+/* Hover Effect */
+.option:hover {
+    transform: scale(1.05);
+}
+
+/* ✅ Color-coded buttons */
+.option-0 { background: red; }
+.option-1 { background: blue; }
+.option-2 { background: yellow; color: black; }
+.option-3 { background: green; }

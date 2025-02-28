@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.quiz-container {
+  background: linear-gradient(135deg, #1a1a40, #4b0082);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
+  animation: floatingBackground 6s infinite alternate ease-in-out;
+}
+
+/* Background Animation */
+.quiz-container::before {
+  content: "";
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: floating 6s infinite alternate ease-in-out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(-50%, -50%) translateY(-20px) translateX(-20px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(20px) translateX(20px);
+  }
+}
+
+/* Title */
+.quiz-title {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: 'Lobster', cursive;
+  color: white;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Quiz Cards */
+.quiz-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.quiz-card:hover {
+  transform: scale(1.05);
+}
+
+/* Quiz Title */
+.quiz-card-title {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Room Code */
+.quiz-room-code {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.quiz-room-code span {
+  font-weight: bold;
+  color: white;
+}
+
+/* Quiz Description */
+.quiz-description {
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.quiz-actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.quiz-start-btn {
+  padding: 15px 30px;
+  background-color: white;
+  color: #4b0082;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.quiz-start-btn:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* Schedule Button - Similar to Start Now */
+.quiz-schedule-btn {
+  padding: 15px 30px;
+  background-color: white;
+  color: #4b0082;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+}
+
+.quiz-schedule-btn:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+
+/* Icons */
+.quiz-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.quiz-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.quiz-icon {
+  font-size: 1.5rem;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.quiz-icon:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+/* Delete Button */
+.quiz-delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.quiz-delete-btn .quiz-icon {
+  color: #ff4d4d;
+}
+
+.quiz-delete-btn .quiz-icon:hover {
+  color: #ff0000;
+}
