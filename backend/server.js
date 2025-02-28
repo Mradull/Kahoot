@@ -30,7 +30,8 @@ const __dirname = path.dirname(__filename);
 // Middleware
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ 
+  origin: ["https://kahoot-iota.vercel.app", "http://localhost:3000"], credentials: true }));
 
 // Connect to MongoDB
 connectDB();
